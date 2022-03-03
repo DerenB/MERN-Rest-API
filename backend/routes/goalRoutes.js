@@ -1,11 +1,10 @@
 // ROUTES
 const express = require('express')
 const router = express.Router()
+const {getGoals} = require('../controllers/goalController')
 
 // GET REQUEST
-router.get('/', (req, res) => {
-    res.status(200).json({ message: 'Get Goals' })
-})
+router.get('/', getGoals)
 
 // CREATE REQUEST
 router.post('/', (req, res) => {
