@@ -3,10 +3,15 @@
 // BRINGS IN EXPRESS & DOTENV
 const { application } = require('express');
 const express = require('express');
+const colors = require('colors');
 const dotenv = require('dotenv').config();
 
 // ERROR HANDLER
 const {errorHandler} = require('./middleware/errorMiddleware');
+
+// CONNECT TO DB
+const connectDB = require('./config/db');
+connectDB();
 
 // PORT
 const port = process.env.PORT || 5002;
